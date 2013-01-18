@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE greeter SYSTEM "greeter.dtd">
+
+<!--
+Copyright 2011-2012 Jaroslav Reznik <jreznik@redhat.com>
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of 
+the License, or (at your option) any later version.            
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the   
+GNU General Public License for more details.                   
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+--> 
+
+<greeter id="theme">
+	<style font="Sans 12" window-text-color="#ffffff"
+	       base-color="#ffffff" alternate-base-color="#666666"
+	       text-color="#000000" disabled-text-color="#111111"/>
+	       
+	<item type="pixmap" id="background" background="true">
+		<normal wallpaper="Spherical_Cow"/>
+		<pos anchor="c" x="50%" y="50%" width="100%" height="100%"/>
+	</item>
+
+	<item type="rect" id="system-session">
+		<pos anchor="c" x="50%" y="50%" width="100%" height="316"/>
+		<box orientation="vertical" spacing="10" homogeneous="false">
+		
+
+			<item type="rect" id="user-field">
+				<pos x="10" y="0" width="400" height="300"/>
+				<fixed>
+					<item type="pixmap" id="user">
+						<normal file="user.png"/>
+						<pos x="10" y="53"/>
+					</item>
+
+					<item type="entry" id="user-entry">
+						<pos x="40" y="50" width="200" height="22"/>
+					</item>
+
+					<item type="pixmap" id="pass">
+						<normal file="pass.png"/>
+						<pos x="10" y="89"/>
+					</item>
+
+					<item type="entry" id="pw-entry">
+						<pos x="40" y="85" width="200" height="22"/>
+					</item>
+
+					<item type="pixmap" id="session_button" button="true">
+						<normal file="session.png"/>
+						<pos anchor="w" x="10" y="152"/>
+					</item>
+
+    					<item type="label" id="session_button" button="true">
+    						<normal alpha="0.5"/>
+    	                                        <pos x="40" y="150" anchor="w" width="300"/>
+                                                <stock type="session"/>
+                                        </item>
+
+					<item type="pixmap" id="system_button" button="true">
+						<normal file="menu.png"/>
+						<pos anchor="w" x="10" y="175"/>
+					</item>
+
+					<item type="label" id="system_button" button="true">
+    	                                        <normal alpha="0.5"/>
+    	                                        <pos x="40" y="175" anchor="w"  width="300"/>
+                                                <stock type="system"/>
+                                        </item>
+
+					<item type="label" id="welcome">
+						<pos x="10" y="220" width="380"/>
+						<normal alpha="0.5"/>
+						<stock type="welcome-label"/>
+					</item>
+
+				</fixed>
+		
+			</item>
+		</box>
+	</item> 
+
+	<item type="pixmap" id="caps-lock-warning">
+	<pos anchor="c" x="50%" y="51%"/>
+	
+		<fixed>
+		
+			<item type="label" id="mesage">
+			<normal color="#ff0000" font="Sans Bold 14"/>
+			<pos anchor="c" x="50%" y="85%" width="200"/>
+			<stock type="caps-lock-warning"/>
+			</item>
+			
+		</fixed>
+		
+	</item>
+</greeter>
