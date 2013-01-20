@@ -9,7 +9,7 @@ Group:		User Interface/Desktops
 License:	GPLv2+ and CC-BY-SA
 
 URL:		https://kororaproject.org
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
 BuildRequires:	kde-filesystem
