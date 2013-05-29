@@ -1,0 +1,29 @@
+diff -Nurd korora-kde-theme-18.91.5/kdm/SchroedingerCat/schroedinger-cat.xml korora-kde-theme-18.91.5-orig/kdm/SchroedingerCat/schroedinger-cat.xml
+--- korora-kde-theme-18.91.5/kdm/SchroedingerCat/schroedinger-cat.xml	2013-03-28 05:07:34.000000000 +1100
++++ korora-kde-theme-18.91.5-orig/kdm/SchroedingerCat/schroedinger-cat.xml	2013-05-29 22:32:04.209802171 +1000
+@@ -32,12 +32,6 @@
+ 		<pos anchor="c" x="50%" y="50%" width="100%" height="316"/>
+ 		<box orientation="vertical" spacing="10" homogeneous="false">
+ 		
+-			<item type="pixmap">
+-				<normal file="system-logo-white.png"/>
+-				<pos anchor="w" x="10" y="40"/>
+-			</item>
+-
+-
+ 			<item type="rect" id="user-field">
+ 				<pos x="10" y="0" width="400" height="300"/>
+ 				<fixed>
+diff -Nurd korora-kde-theme-18.91.5/ksplash/SchroedingerCat/2048x1536/description.txt korora-kde-theme-18.91.5-orig/ksplash/SchroedingerCat/2048x1536/description.txt
+--- korora-kde-theme-18.91.5/ksplash/SchroedingerCat/2048x1536/description.txt	2013-03-28 05:07:34.000000000 +1100
++++ korora-kde-theme-18.91.5-orig/ksplash/SchroedingerCat/2048x1536/description.txt	2013-05-29 22:33:03.648850206 +1000
+@@ -4,9 +4,6 @@
+ BACKGROUND_IMAGE 0 0 schroedinger-cat.jpg
+ SCALE OFF
+ 
+-# logo is centered
+-IMAGE_REL LB 120 -100 CC logo.png
+-
+ ANIM_REL 1 LB 240 -130 LT 30 icon1_anim.png 85 1
+ WAIT_STATE kded
+ 
