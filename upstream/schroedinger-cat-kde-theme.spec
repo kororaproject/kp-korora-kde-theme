@@ -1,32 +1,24 @@
-%global backgrounds_kde_version 18.91.0
+%global backgrounds_kde_version 18.90.0
 
-Name:		korora-kde-theme
+Name:		schroedinger-cat-kde-theme
 Version:	18.91.5
 Release:	1%{?dist}
-Summary:	Korora KDE Theme
+Summary:	Schrödinger's Cat KDE Theme
 
 License:	GPLv2+ and CC-BY-SA
 
 # We are upstream for this package
 URL:		https://fedorahosted.org/fedora-kde-artwork/
 Source0:	https://fedorahosted.org/releases/f/e/fedora-kde-artwork/%{name}-%{version}.tar.bz2
-Patch0: korora-kde-theme.patch
 BuildArch:	noarch
 BuildRequires:	kde-filesystem
 Requires:	kde-filesystem
 Requires:	system-logos
-Requires:	korora-backgrounds-kde >= %{backgrounds_kde_version}
+Requires:	schroedinger-cat-backgrounds-kde >= %{backgrounds_kde_version}
 
-Provides:  schroedinger-cat-kdm-theme
-Provides:  schroedinger-cat-ksplash-theme
-Provides:  schroedinger-cat-plasma-desktoptheme
-Provides:  schroedinger-cat-kde-theme
-
-Obsoletes: schroedinger-cat-kdm-theme
-Obsoletes: schroedinger-cat-ksplash-theme
-Obsoletes: schroedinger-cat-plasma-desktoptheme
-Obsoletes: schroedinger-cat-kde-theme
-
+Provides:	schroedinger-cat-kdm-theme = %{version}-%{release}
+Provides:	schroedinger-cat-ksplash-theme = %{version}-%{release}
+Provides:	schroedinger-cat-plasma-desktoptheme = %{version}-%{release}
 
 # replace it later for F20
 %if 0%{?fedora} > 19
@@ -44,13 +36,12 @@ Provides:	system-plasma-desktoptheme = %{version}-%{release}
 %endif
 
 %description
-This is Korora's KDE Theme Artwork containing KDM theme,
+This is Schrödinger's Cat KDE Theme Artwork containing KDM theme,
 KSplash theme and Plasma Workspaces theme.
 
 
 %prep
 %setup -q
-%patch0 -p1
 
 
 %build

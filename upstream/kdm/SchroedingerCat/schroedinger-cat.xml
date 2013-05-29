@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	       text-color="#000000" disabled-text-color="#111111"/>
 	       
 	<item type="pixmap" id="background" background="true">
-		<normal wallpaper="Spherical_Cow"/>
+		<normal wallpaper="Schroedinger_Cat"/>
 		<pos anchor="c" x="50%" y="50%" width="100%" height="100%"/>
 	</item>
 
@@ -32,6 +32,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<pos anchor="c" x="50%" y="50%" width="100%" height="316"/>
 		<box orientation="vertical" spacing="10" homogeneous="false">
 		
+			<item type="pixmap">
+				<normal file="system-logo-white.png"/>
+				<pos anchor="w" x="10" y="40"/>
+			</item>
+
 
 			<item type="rect" id="user-field">
 				<pos x="10" y="0" width="400" height="300"/>

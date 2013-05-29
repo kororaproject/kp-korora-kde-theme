@@ -1,4 +1,4 @@
-NAME=spherical-cow-kde-theme
+NAME=schroedinger-cat-kde-theme
 VERSION=$(shell sed -n -r -e '/Version:/s/[[:alpha:]]+:[[:space:]]+//p' ${NAME}.spec)
 SVNTAG="${NAME}-${VERSION}"
 

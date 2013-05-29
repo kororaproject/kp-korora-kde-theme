@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Spherical Cow netbook
-Comment=Spherical Cow Plasma theme for netbooks
+Name=Schrödinger's Cat
+Comment=Schrödinger's Cat Plasma theme
 
 X-KDE-PluginInfo-Author=Fedora KDE-SIG
 X-KDE-PluginInfo-Email=kde@lists.fedoraproject.org
-X-KDE-PluginInfo-Name=Spherical_Cow-netbook
-X-KDE-PluginInfo-Version=17.91.0
+X-KDE-PluginInfo-Name=Schroedinger_Cat
+X-KDE-PluginInfo-Version=18.91.5
 X-KDE-PluginInfo-Website=http://fedoraproject.org/SIGs/KDE
 X-KDE-PluginInfo-Category=
 X-KDE-PluginInfo-Depends=
@@ -13,11 +13,11 @@ X-KDE-PluginInfo-License=CC-BY-SA
 X-KDE-PluginInfo-EnabledByDefault=true
 
 [Settings]
-FallbackTheme=air-netbook
+FallbackTheme=default
 
 [Wallpaper]
-defaultWallpaperTheme=Spherical_Cow
-defaultFileSuffix=.png
+defaultWallpaperTheme=Schroedinger_Cat
+defaultFileSuffix=.jpg
 defaultWidth=1920
 defaultHeight=1200
 
