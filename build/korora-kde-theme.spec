@@ -9,7 +9,7 @@ License:	GPLv2+ and CC-BY-SA
 
 # We are upstream for this package
 URL:		https://fedorahosted.org/fedora-kde-artwork/
-Source0:	https://fedorahosted.org/releases/f/e/fedora-kde-artwork/schroedinger-cat-kde-theme-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.gz
 Patch0: korora-kde-theme.patch
 BuildArch:	noarch
 BuildRequires:	kde-filesystem
