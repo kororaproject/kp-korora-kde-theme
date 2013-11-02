@@ -1,6 +1,6 @@
 [KdmGreeterTheme]
-Greeter=schroedinger-cat.xml
-Name=Schrödinger's Cat
+Greeter=heisenbug.xml
+Name=Heisenbug
 Author=Fedora KDE SIG
 Copyright=(C) 2013 Fedora KDE SIG
 Screenshot=screenshot.png

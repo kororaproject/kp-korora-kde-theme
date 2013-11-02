@@ -1,9 +1,9 @@
-NAME=schroedinger-cat-kde-theme
+NAME=heisenbug-kde-theme
 VERSION=$(shell sed -n -r -e '/Version:/s/[[:alpha:]]+:[[:space:]]+//p' ${NAME}.spec)
 SVNTAG="${NAME}-${VERSION}"
 
 tag:
-	svn copy "$(shell svn info | grep URL: | sed -e 's/[^:]*: //')" \
+	svn copy "$(shell svn info | grep ^URL: | sed -e 's/[^:]*: //')" \
 	"$(shell svn info | grep Root: | sed -e 's/[^:]*: //')/tags/$(SVNTAG)" \
 	-m "tagged release $(VERSION)"
                                           
@@ -27,4 +27,3 @@ upload:
 	scp ${NAME}-${VERSION}.tar.bz2 fedorahosted.org:fedora-kde-artwork
 
 release: tag archive upload
-        

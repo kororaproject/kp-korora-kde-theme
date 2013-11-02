@@ -1,9 +1,0 @@
-[KSplash Theme: SchroedingerCat]
-Name = Fedora 19 Schrödinger's Cat Splash Screen
-Description = Schrödinger's Cat Splash Theme for Fedora.
-Version = 18.91.5
-Author = Fedora KDE SIG <fedora-kde@fedoraproject.org>
-Homepage = http://www.fedoraproject.org/
-
-# Theme behaviour settings.
-Engine = KSplashX

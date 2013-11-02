@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Schrödinger's Cat
-Comment=Schrödinger's Cat Plasma theme
+Name=Heisenbug
+Comment=Heisenbug Plasma theme
 
 X-KDE-PluginInfo-Author=Fedora KDE-SIG
 X-KDE-PluginInfo-Email=kde@lists.fedoraproject.org
-X-KDE-PluginInfo-Name=Schroedinger_Cat
-X-KDE-PluginInfo-Version=18.91.5
+X-KDE-PluginInfo-Name=Heisenbug
+X-KDE-PluginInfo-Version=19.90.2
 X-KDE-PluginInfo-Website=http://fedoraproject.org/SIGs/KDE
 X-KDE-PluginInfo-Category=
 X-KDE-PluginInfo-Depends=
@@ -16,8 +16,8 @@ X-KDE-PluginInfo-EnabledByDefault=true
 FallbackTheme=default
 
 [Wallpaper]
-defaultWallpaperTheme=Schroedinger_Cat
-defaultFileSuffix=.jpg
+defaultWallpaperTheme=Heisenbug
+defaultFileSuffix=.png
 defaultWidth=1920
 defaultHeight=1200
 

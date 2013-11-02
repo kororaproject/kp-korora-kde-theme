@@ -1,31 +1,24 @@
 %global backgrounds_kde_version 19.90.0
 
-Name:		korora-kde-theme
+Name:		heisenbug-kde-theme
 Version:	19.90.5
 Release:	1%{?dist}
-Summary:	Korora KDE Theme
+Summary:	Heisenbug KDE Theme
 
 License:	GPLv2+ and CC-BY-SA
 
 # We are upstream for this package
 URL:		https://fedorahosted.org/fedora-kde-artwork/
-Source0:	%{name}-%{version}.tar.gz
-Patch0: korora-kde-theme.patch
+Source0:	https://fedorahosted.org/releases/f/e/fedora-kde-artwork/%{name}-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	kde-filesystem
 Requires:	kde-filesystem
 Requires:	system-logos
-Requires:	korora-backgrounds-kde >= %{backgrounds_kde_version}
+Requires:	heisenbug-backgrounds-kde >= %{backgrounds_kde_version}
 
-Provides:	heisenbug-kdm-theme
-Provides:	heisenbug-ksplash-theme
-Provides:	heisenbug-plasma-desktoptheme
-Provides:	heisenbug-kde-theme
-
-Obsoletes:	heisenbug-kdm-theme
-Obsoletes:	heisenbug-ksplash-theme
-Obsoletes:	heisenbug-plasma-desktoptheme
-Obsoletes:	heisenbug-kde-theme
+Provides:	heisenbug-kdm-theme = %{version}-%{release}
+Provides:	heisenbug-ksplash-theme = %{version}-%{release}
+Provides:	heisenbug-plasma-desktoptheme = %{version}-%{release}
 
 # replace it later for F20
 %if 0%{?fedora} > 20
@@ -43,13 +36,12 @@ Provides:	system-plasma-desktoptheme = %{version}-%{release}
 %endif
 
 %description
-This is Korora's KDE Theme Artwork containing KDM theme,
+This is Heisenbug KDE Theme Artwork containing KDM theme, SDDM theme
 KSplash theme and Plasma Workspaces theme.
 
 
 %prep
 %setup -q
-%patch0 -p1
 
 
 %build
@@ -108,7 +100,7 @@ rm -rf %{buildroot}
 - drop sddm theme (moved to sddm packaging)
 
 * Tue Sep 10 2013 Martin Briza <mbriza@redhat.com> 19.90.4-1
-- Fedora-brand the KDE theme, set it to username entry instead of user list (#1007065)
+- Fedora-brand the KDE theme, set it to username entry instead of user list
 
 * Tue Sep 10 2013 Martin Briza <mbriza@redhat.com> 19.90.3-1
 - fix the symlink to SDDM theme's background
@@ -125,4 +117,3 @@ rm -rf %{buildroot}
 
 * Mon Sep 09 2013 Martin Briza <mbriza@redhat.com> 19.90.0-1
 - initial package
-
