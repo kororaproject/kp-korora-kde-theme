@@ -1,6 +1,6 @@
 [SddmGreeterTheme]
-Name=Heisenbug
-Description=Fedora 20 Heisenbug SDDM Theme
+Name=Korora
+Description=Korora SDDM Theme
 Author=Martin Bříza
 Copyright=(c) 2013, Martin Bříza
 License=CC-BY-SA
@@ -11,5 +11,5 @@ Screenshot=screenshot.jpg
 MainScript=Main.qml
 ConfigFile=theme.conf
 Email=mbriza@redhat.com
-Theme-Id=heisenbug
+Theme-Id=korora
 Theme-API=1.1

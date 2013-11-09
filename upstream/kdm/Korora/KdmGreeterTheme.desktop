@@ -1,6 +1,6 @@
 [KdmGreeterTheme]
-Greeter=heisenbug.xml
-Name=Heisenbug
+Greeter=korora.xml
+Name=Korora
 Author=Fedora KDE SIG
 Copyright=(C) 2013 Fedora KDE SIG
 Screenshot=screenshot.png

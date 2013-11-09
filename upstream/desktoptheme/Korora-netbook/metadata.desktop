@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Heisenbug netbook
-Comment=Heisenbug Plasma theme for netbooks
+Name=Korora netbook
+Comment=Korora Plasma theme for netbooks
 
 X-KDE-PluginInfo-Author=Fedora KDE-SIG
 X-KDE-PluginInfo-Email=kde@lists.fedoraproject.org
-X-KDE-PluginInfo-Name=Heisenbug-netbook
+X-KDE-PluginInfo-Name=Korora-netbook
 X-KDE-PluginInfo-Version=19.90.2
 X-KDE-PluginInfo-Website=http://fedoraproject.org/SIGs/KDE
 X-KDE-PluginInfo-Category=
@@ -16,10 +16,10 @@ X-KDE-PluginInfo-EnabledByDefault=true
 FallbackTheme=air-netbook
 
 [Wallpaper]
-defaultWallpaperTheme=Heisenbug
+defaultWallpaperTheme=Korora
 defaultFileSuffix=.png
 defaultWidth=1920
 defaultHeight=1200
 
 [Branding]
-homepage=http://fedoraproject.org
+homepage=http://kororaproject.org

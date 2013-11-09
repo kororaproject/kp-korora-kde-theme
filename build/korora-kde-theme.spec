@@ -2,7 +2,7 @@
 
 Name:		korora-kde-theme
 Version:	19.90.5
-Release:	1%{?dist}.1
+Release:	1%{?dist}.3
 Summary:	Korora KDE Theme
 
 License:	GPLv2+ and CC-BY-SA
@@ -60,8 +60,8 @@ rm -rf %{buildroot}
 
 ### Plasma desktoptheme's
 mkdir -p %{buildroot}%{_kde4_appsdir}/desktoptheme/
-cp -rp desktoptheme/Heisenbug/ %{buildroot}%{_kde4_appsdir}/desktoptheme/
-cp -rp desktoptheme/Heisenbug-netbook/ %{buildroot}%{_kde4_appsdir}/desktoptheme/
+cp -rp desktoptheme/Korora/ %{buildroot}%{_kde4_appsdir}/desktoptheme/
+cp -rp desktoptheme/Korora-netbook/ %{buildroot}%{_kde4_appsdir}/desktoptheme/
 # the branding image branding.svgz is still missing in fedora-logos
 # we should add it in next fedora release
 # pushd {buildroot}{_kde4_appsdir}/desktoptheme/widgets/
@@ -70,26 +70,26 @@ cp -rp desktoptheme/Heisenbug-netbook/ %{buildroot}%{_kde4_appsdir}/desktoptheme
 
 ### KDM
 mkdir -p %{buildroot}%{_kde4_appsdir}/kdm/themes/
-cp -rp kdm/Heisenbug/ %{buildroot}%{_kde4_appsdir}/kdm/themes/
-pushd %{buildroot}%{_kde4_appsdir}/kdm/themes/Heisenbug/
+cp -rp kdm/Korora/ %{buildroot}%{_kde4_appsdir}/kdm/themes/
+pushd %{buildroot}%{_kde4_appsdir}/kdm/themes/Korora/
 # system logo
 ln -s ../../../../../pixmaps/system-logo-white.png system-logo-white.png
 popd
 
 ## KSplash
 mkdir -p %{buildroot}%{_kde4_appsdir}/ksplash/Themes/
-cp -rp ksplash/Heisenbug/ %{buildroot}%{_kde4_appsdir}/ksplash/Themes/
-ln -s ../../../../../../backgrounds/heisenbug/default/standard/heisenbug.png \
-  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Heisenbug/2048x1536/
-mkdir %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Heisenbug/1920x1200/
-ln -s ../../../../../../backgrounds/heisenbug/default/wide/heisenbug.png \
-  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Heisenbug/1920x1200/Heisenbug.png
-mkdir %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Heisenbug/1280x1024/
-ln -s ../../../../../../backgrounds/heisenbug/default/normalish/heisenbug.png \
-  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Heisenbug/1280x1024/Heisenbug.png
+cp -rp ksplash/Korora/ %{buildroot}%{_kde4_appsdir}/ksplash/Themes/
+ln -s ../../../../../../backgrounds/korora/default/standard/korora.png \
+  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/2048x1536/
+mkdir %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1920x1200/
+ln -s ../../../../../../backgrounds/korora/default/wide/korora.png \
+  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1920x1200/korora.png
+mkdir %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1280x1024/
+ln -s ../../../../../../backgrounds/Korora/default/normalish/korora.png \
+  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1280x1024/korora.png
  
 # system logo 
-ln -s ../../../../../../pixmaps/system-logo-white.png %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Heisenbug/2048x1536/logo.png
+ln -s ../../../../../../pixmaps/system-logo-white.png %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/2048x1536/logo.png
 
 %clean
 rm -rf %{buildroot}
@@ -98,31 +98,11 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %doc README COPYING.CC-BY-SA COPYING.GPLv2
-%{_kde4_appsdir}/desktoptheme/Heisenbug/
-%{_kde4_appsdir}/desktoptheme/Heisenbug-netbook/
-%{_kde4_appsdir}/kdm/themes/Heisenbug/
-%{_kde4_appsdir}/ksplash/Themes/Heisenbug/
+%{_kde4_appsdir}/desktoptheme/Korora/
+%{_kde4_appsdir}/desktoptheme/Korora-netbook/
+%{_kde4_appsdir}/kdm/themes/Korora/
+%{_kde4_appsdir}/ksplash/Themes/Korora/
 
 %changelog
-* Wed Oct 16 2013 Rex Dieter <rdieter@fedoraproject.org> 19.90.5-1
-- drop sddm theme (moved to sddm packaging)
-
-* Tue Sep 10 2013 Martin Briza <mbriza@redhat.com> 19.90.4-1
-- Fedora-brand the KDE theme, set it to username entry instead of user list (#1007065)
-
-* Tue Sep 10 2013 Martin Briza <mbriza@redhat.com> 19.90.3-1
-- fix the symlink to SDDM theme's background
-- fix the screenshots
-- fixed the wallpaper name in the KDM theme
-- stopped linking the font in the SDDM theme'
-
-* Tue Sep 10 2013 Jaroslav Reznik <jreznik@redhat.com> 19.90.2-1
-- fix png suffix and version for desktop theme
-
-* Mon Sep 09 2013 Jaroslav Reznik <jreznik@redhat.com> 19.90.1-1
-- fix backgrounds suffix to match heisenbug-backgrounds
-- fix screenshots
-
-* Mon Sep 09 2013 Martin Briza <mbriza@redhat.com> 19.90.0-1
-- initial package
-
+* Sat Nov 9 2013 Chris Smart <csmart@kororaproject.org> 19.90.5-1
+- Initial package

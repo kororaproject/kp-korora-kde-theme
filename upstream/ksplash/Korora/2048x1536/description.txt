@@ -1,11 +1,8 @@
 # rev. 2
 
 SCALE ON
-BACKGROUND_IMAGE 0 0 heisenbug.png
+BACKGROUND_IMAGE 0 0 korora.png
 SCALE OFF
-
-# logo is centered
-# IMAGE_REL LB 120 -100 CC logo.png
 
 ANIM_REL 1 LB 120 -130 LT 30 icon1_anim.png 85 1
 WAIT_STATE kded
