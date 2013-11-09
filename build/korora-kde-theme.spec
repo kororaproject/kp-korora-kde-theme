@@ -17,16 +17,6 @@ Requires:	kde-filesystem
 Requires:	system-logos
 Requires:	korora-backgrounds-kde >= %{backgrounds_kde_version}
 
-Provides:	heisenbug-kdm-theme
-Provides:	heisenbug-ksplash-theme
-Provides:	heisenbug-plasma-desktoptheme
-Provides:	heisenbug-kde-theme
-
-Obsoletes:	heisenbug-kdm-theme
-Obsoletes:	heisenbug-ksplash-theme
-Obsoletes:	heisenbug-plasma-desktoptheme
-Obsoletes:	heisenbug-kde-theme
-
 # replace it later for F20
 %if 0%{?fedora} > 20
 Provides:	system-kde-theme = %{version}-%{release}
@@ -49,7 +39,7 @@ KSplash theme and Plasma Workspaces theme.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 
 %build
