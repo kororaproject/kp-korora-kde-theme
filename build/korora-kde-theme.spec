@@ -2,7 +2,7 @@
 
 Name:		korora-kde-theme
 Version:	19.90.5
-Release:	1%{?dist}.3
+Release:	1%{?dist}.4
 Summary:	Korora KDE Theme
 
 License:	GPLv2+ and CC-BY-SA
