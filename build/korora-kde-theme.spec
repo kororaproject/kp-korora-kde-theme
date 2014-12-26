@@ -2,7 +2,7 @@
 
 Name:		korora-kde-theme
 Version:	%{backgrounds_kde_version}
-Release:	1%{?dist}
+Release:	1%{?dist}.1
 Summary:	Korora KDE Theme
 
 License:	GPLv2+ and CC-BY-SA
@@ -20,9 +20,6 @@ Requires:	korora-backgrounds-kde >= %{backgrounds_kde_version}
 Provides:       korora-kdm-theme = %{version}-%{release}
 Provides:       korora-ksplash-theme = %{version}-%{release}
 Provides:       korora-plasma-desktoptheme = %{version}-%{release}
-Obsoletes:      f21-kdm-theme = %{version}-%{release}
-Obsoletes:      f21-ksplash-theme = %{version}-%{release}
-Obsoletes:      f21-plasma-desktoptheme = %{version}-%{release}
 
 # replace it later for F22
 # replace it later for F22
@@ -102,5 +99,8 @@ rm -rf %{buildroot}
 %{_kde4_appsdir}/ksplash/Themes/Korora/
 
 %changelog
+* Sat Dec 27 2014 Chris Smart <csmart@kororaproject.org> 21.0-1
+- Update to upstream
+
 * Sat Nov 9 2013 Chris Smart <csmart@kororaproject.org> 19.90.5-1
 - Initial package
