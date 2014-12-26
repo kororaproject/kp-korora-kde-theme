@@ -1,8 +1,8 @@
-%global backgrounds_kde_version 19.90.0
+%global backgrounds_kde_version 21.0
 
 Name:		korora-kde-theme
-Version:	19.90.5
-Release:	1%{?dist}.4
+Version:	%{backgrounds_kde_version}
+Release:	1%{?dist}
 Summary:	Korora KDE Theme
 
 License:	GPLv2+ and CC-BY-SA
@@ -10,26 +10,34 @@ License:	GPLv2+ and CC-BY-SA
 # We are upstream for this package
 URL:		https://fedorahosted.org/fedora-kde-artwork/
 Source0:	%{name}-%{version}.tar.gz
-Patch0: korora-kde-theme.patch
+Patch0:		korora-kde-theme.patch
 BuildArch:	noarch
 BuildRequires:	kde-filesystem
 Requires:	kde-filesystem
 Requires:	system-logos
 Requires:	korora-backgrounds-kde >= %{backgrounds_kde_version}
 
-# replace it later for F20
-%if 0%{?fedora} > 20
-Provides:	system-kde-theme = %{version}-%{release}
-Provides:	system-kdm-theme = %{version}-%{release}
-Provides:	system-ksplash-theme = %{version}-%{release}
-Provides:	system-plasma-desktoptheme = %{version}-%{release}
+Provides:       korora-kdm-theme = %{version}-%{release}
+Provides:       korora-ksplash-theme = %{version}-%{release}
+Provides:       korora-plasma-desktoptheme = %{version}-%{release}
+Obsoletes:      f21-kdm-theme = %{version}-%{release}
+Obsoletes:      f21-ksplash-theme = %{version}-%{release}
+Obsoletes:      f21-plasma-desktoptheme = %{version}-%{release}
+
+# replace it later for F22
+# replace it later for F22
+%if 0%{?fedora} > 21
+Provides:       system-kde-theme = %{version}-%{release}
+Provides:       system-kdm-theme = %{version}-%{release}
+Provides:       system-ksplash-theme = %{version}-%{release}
+Provides:       system-plasma-desktoptheme = %{version}-%{release}
 %endif
 
-%if 0%{?fedora} == 20
-Provides:	system-kde-theme = %{version}-%{release}
-Provides:	system-kdm-theme = %{version}-%{release}
-Provides:	system-ksplash-theme = %{version}-%{release}
-Provides:	system-plasma-desktoptheme = %{version}-%{release}
+%if 0%{?fedora} == 21
+Provides:       system-kde-theme = %{version}-%{release}
+Provides:       system-kdm-theme = %{version}-%{release}
+Provides:       system-ksplash-theme = %{version}-%{release}
+Provides:       system-plasma-desktoptheme = %{version}-%{release}
 %endif
 
 %description

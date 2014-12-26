@@ -1,9 +1,9 @@
 [KSplash Theme: Korora]
-Name = Korora Splash Screen
-Description = Korora Splash Theme
-Version = 19.90.0
+Name = Korora 21 Darla Splash Screen
+Description = Splash Theme for Korora.
+Version = 21.0
 Author = Fedora KDE SIG <fedora-kde@fedoraproject.org>
-Homepage = http://www.kororaproject.org/
+Homepage = http://kororaproject.org/
 
 # Theme behaviour settings.
 Engine = KSplashX

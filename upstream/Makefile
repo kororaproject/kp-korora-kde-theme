@@ -1,4 +1,4 @@
-NAME=heisenbug-kde-theme
+NAME=f21-kde-theme
 VERSION=$(shell sed -n -r -e '/Version:/s/[[:alpha:]]+:[[:space:]]+//p' ${NAME}.spec)
 SVNTAG="${NAME}-${VERSION}"
 
