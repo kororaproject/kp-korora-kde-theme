@@ -10,11 +10,6 @@ URL:		https://fedorahosted.org/fedora-kde-artwork/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		korora-kde-theme.patch
 BuildArch:	noarch
-## handle looknfeel rename
-# kconf_update
-Source1: f22-kde-theme.upd
-# env/shutdown scriptlet hammer, in case kconf_update fails (which seems to happen semi-regularly -- rex)
-Source2: f22-kde-theme.sh
 
 BuildRequires:	kde-filesystem
 Requires:	kde-filesystem
@@ -63,13 +58,6 @@ This is the Korora Artwork containing KDM theme.
 ### Look and feel
 mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
 cp -rp lookandfeel/* %{buildroot}%{_datadir}/plasma/look-and-feel/org.fedoraproject.fedora.twenty.two/
-
-## handle org.fedoraproject.twentytwo => org.fedoraproject.fedora.twenty.two rename
-install -p -m644 -D %{SOURCE1} %{buildroot}%{_datadir}/kconf_update/f22-kde-theme.upd
-mkdir -p %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/{env,shutdown}
-install -p -m644 -D %{SOURCE2} %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/env/f22-kde-theme.sh
-cp -alf %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/env/f22-kde-theme.sh \
-        %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/shutdown/f22-kde-theme.sh
 
 
 ### Plasma desktoptheme's
