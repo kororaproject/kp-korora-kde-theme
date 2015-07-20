@@ -1,4 +1,4 @@
-NAME=f21-kde-theme
+NAME=f22-kde-theme
 VERSION=$(shell sed -n -r -e '/Version:/s/[[:alpha:]]+:[[:space:]]+//p' ${NAME}.spec)
 SVNTAG="${NAME}-${VERSION}"
 

@@ -1,7 +1,5 @@
-%global backgrounds_kde_version 21.0
-
 Name:		korora-kde-theme
-Version:	%{backgrounds_kde_version}
+Version:	22
 Release:	1%{?dist}.1
 Summary:	Korora KDE Theme
 
@@ -12,56 +10,71 @@ URL:		https://fedorahosted.org/fedora-kde-artwork/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		korora-kde-theme.patch
 BuildArch:	noarch
+## handle looknfeel rename
+# kconf_update
+Source1: f22-kde-theme.upd
+# env/shutdown scriptlet hammer, in case kconf_update fails (which seems to happen semi-regularly -- rex)
+Source2: f22-kde-theme.sh
+
 BuildRequires:	kde-filesystem
 Requires:	kde-filesystem
 Requires:	system-logos
-Requires:	korora-backgrounds-kde >= %{backgrounds_kde_version}
+Requires:	korora-backgrounds-kde >= 21.91
 
-Provides:       korora-kdm-theme = %{version}-%{release}
-Provides:       korora-ksplash-theme = %{version}-%{release}
 Provides:       korora-plasma-desktoptheme = %{version}-%{release}
+Provides:       korora-plasma-theme = %{version}-%{release}
+Provides:       korora-kdm-theme = %{version}-%{release}
 
 # replace it later for F22
-# replace it later for F22
-%if 0%{?fedora} > 21
+%if 0%{?fedora} > 22
 Provides:       system-kde-theme = %{version}-%{release}
-Provides:       system-kdm-theme = %{version}-%{release}
 Provides:       system-ksplash-theme = %{version}-%{release}
 Provides:       system-plasma-desktoptheme = %{version}-%{release}
+Provides:       system-plasma-theme = %{version}-%{release}
 %endif
 
-%if 0%{?fedora} == 21
+%if 0%{?fedora} == 22
 Provides:       system-kde-theme = %{version}-%{release}
-Provides:       system-kdm-theme = %{version}-%{release}
 Provides:       system-ksplash-theme = %{version}-%{release}
 Provides:       system-plasma-desktoptheme = %{version}-%{release}
+Provides:       system-plasma-theme = %{version}-%{release}
 %endif
 
 %description
-This is Korora's KDE Theme Artwork containing KDM theme,
-KSplash theme and Plasma Workspaces theme.
+This is Korora's KDE Theme Artwork containing KDM theme.
 
+%package -n korora-kdm-theme
+Summary:	      Korora KDM Theme
+Requires:       kde-filesystem
+Requires:       system-logos
+Requires:       korora-backgrounds-kde >= 21.91
+Provides:       system-kdm-theme = %{version}-%{release}
+
+%description -n korora-kdm-theme
+This is the Korora Artwork containing KDM theme.
 
 %prep
 %setup -q
 #%patch0 -p1
 
-
 %build
-# blank
 
 %install
-rm -rf %{buildroot}
+### Look and feel
+mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
+cp -rp lookandfeel/* %{buildroot}%{_datadir}/plasma/look-and-feel/org.fedoraproject.fedora.twenty.two/
+
+## handle org.fedoraproject.twentytwo => org.fedoraproject.fedora.twenty.two rename
+install -p -m644 -D %{SOURCE1} %{buildroot}%{_datadir}/kconf_update/f22-kde-theme.upd
+mkdir -p %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/{env,shutdown}
+install -p -m644 -D %{SOURCE2} %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/env/f22-kde-theme.sh
+cp -alf %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/env/f22-kde-theme.sh \
+        %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/shutdown/f22-kde-theme.sh
+
 
 ### Plasma desktoptheme's
 mkdir -p %{buildroot}%{_kde4_appsdir}/desktoptheme/
 cp -rp desktoptheme/Korora/ %{buildroot}%{_kde4_appsdir}/desktoptheme/
-cp -rp desktoptheme/Korora-netbook/ %{buildroot}%{_kde4_appsdir}/desktoptheme/
-# the branding image branding.svgz is still missing in fedora-logos
-# we should add it in next fedora release
-# pushd {buildroot}{_kde4_appsdir}/desktoptheme/widgets/
-# ln -s ../../../../../../pixmaps/branding.svgz branding.svgz
-# popd
 
 ### KDM
 mkdir -p %{buildroot}%{_kde4_appsdir}/kdm/themes/
@@ -71,34 +84,23 @@ pushd %{buildroot}%{_kde4_appsdir}/kdm/themes/Korora/
 ln -s ../../../../../pixmaps/system-logo-white.png system-logo-white.png
 popd
 
-## KSplash
-mkdir -p %{buildroot}%{_kde4_appsdir}/ksplash/Themes/
-cp -rp ksplash/Korora/ %{buildroot}%{_kde4_appsdir}/ksplash/Themes/
-ln -s ../../../../../../backgrounds/korora/default/standard/korora.png \
-  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/2048x1536/
-mkdir %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1920x1200/
-ln -s ../../../../../../backgrounds/korora/default/wide/korora.png \
-  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1920x1200/korora.png
-mkdir %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1280x1024/
-ln -s ../../../../../../backgrounds/Korora/default/normalish/korora.png \
-  %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/1280x1024/korora.png
- 
-# system logo 
-ln -s ../../../../../../pixmaps/system-logo-white.png %{buildroot}%{_kde4_appsdir}/ksplash/Themes/Korora/2048x1536/logo.png
-
-%clean
-rm -rf %{buildroot}
-
 
 %files
-%defattr(-,root,root,-)
 %doc README COPYING.CC-BY-SA COPYING.GPLv2
-%{_kde4_appsdir}/desktoptheme/Korora/
-%{_kde4_appsdir}/desktoptheme/Korora-netbook/
-%{_kde4_appsdir}/kdm/themes/Korora/
-%{_kde4_appsdir}/ksplash/Themes/Korora/
+%{_datadir}/kconf_update/korora-kde-theme.upd
+%{_sysconfdir}/xdg/plasma-workspace/env/korora-kde-theme.sh
+%{_sysconfdir}/xdg/plasma-workspace/shutdown/korora-kde-theme.sh
+%{_datadir}/plasma/desktoptheme/Korora/
+%{_datadir}/plasma/look-and-feel/org.fedoraproject.korora.22/
+
+%files -n korora-kdm-theme
+%{_kde4_appsdir}/kdm/themes/Korora
+
 
 %changelog
+* Mon Jul 20 2015 Ian Firns <firnsy@kororaproject.org> 22.0-1
+- Updated to latest upstream
+
 * Sat Dec 27 2014 Chris Smart <csmart@kororaproject.org> 21.0-1
 - Update to upstream
 
