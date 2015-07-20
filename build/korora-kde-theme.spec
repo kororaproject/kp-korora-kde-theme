@@ -57,12 +57,12 @@ This is the Korora Artwork containing KDM theme.
 %install
 ### Look and feel
 mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
-cp -rp lookandfeel/* %{buildroot}%{_datadir}/plasma/look-and-feel/org.fedoraproject.fedora.twenty.two/
+cp -rp lookandfeel/* %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
 
 
 ### Plasma desktoptheme's
-mkdir -p %{buildroot}%{_kde4_appsdir}/desktoptheme/
-cp -rp desktoptheme/Korora/ %{buildroot}%{_kde4_appsdir}/desktoptheme/
+mkdir -p %{buildroot}%{_datadir}/plasma/desktoptheme/
+cp -rp desktoptheme/Korora/ %{buildroot}%{_datadir}/plasma/desktoptheme/
 
 ### KDM
 mkdir -p %{buildroot}%{_kde4_appsdir}/kdm/themes/
@@ -75,11 +75,8 @@ popd
 
 %files
 %doc README COPYING.CC-BY-SA COPYING.GPLv2
-%{_datadir}/kconf_update/korora-kde-theme.upd
-%{_sysconfdir}/xdg/plasma-workspace/env/korora-kde-theme.sh
-%{_sysconfdir}/xdg/plasma-workspace/shutdown/korora-kde-theme.sh
 %{_datadir}/plasma/desktoptheme/Korora/
-%{_datadir}/plasma/look-and-feel/org.fedoraproject.korora.22/
+%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
 
 %files -n korora-kdm-theme
 %{_kde4_appsdir}/kdm/themes/Korora
