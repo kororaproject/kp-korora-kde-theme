@@ -1,6 +1,6 @@
 Name:		korora-kde-theme
 Version:	22
-Release:	1%{?dist}.1
+Release:	2%{?dist}
 Summary:	Korora KDE Theme
 
 License:	GPLv2+ and CC-BY-SA
@@ -15,6 +15,9 @@ BuildRequires:	kde-filesystem
 Requires:	kde-filesystem
 Requires:	system-logos
 Requires:	korora-backgrounds-kde >= 21.91
+
+Provides:	f22-kde-theme
+Obsoletes:	f22-kde-theme
 
 Provides:       korora-plasma-desktoptheme = %{version}-%{release}
 Provides:       korora-plasma-theme = %{version}-%{release}
@@ -56,8 +59,8 @@ This is the Korora Artwork containing KDM theme.
 
 %install
 ### Look and feel
-mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
-cp -rp lookandfeel/* %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
+mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora/
+cp -rp lookandfeel/* %{buildroot}%{_datadir}/plasma/look-and-feel/org.kororaproject.korora/
 
 
 ### Plasma desktoptheme's
@@ -76,13 +79,16 @@ popd
 %files
 %doc README COPYING.CC-BY-SA COPYING.GPLv2
 %{_datadir}/plasma/desktoptheme/Korora/
-%{_datadir}/plasma/look-and-feel/org.kororaproject.korora.22/
+%{_datadir}/plasma/look-and-feel/org.kororaproject.korora/
 
 %files -n korora-kdm-theme
 %{_kde4_appsdir}/kdm/themes/Korora
 
 
 %changelog
+* Wed Jul 29 2015 Chris Smart <csmart@kororaproject.org> 22.0-2
+- Provide and obsolete f22-kde-theme
+
 * Mon Jul 20 2015 Ian Firns <firnsy@kororaproject.org> 22.0-1
 - Updated to latest upstream
 
