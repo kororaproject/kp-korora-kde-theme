@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Korora 22
+Name=Korora
 Comment=Korora Plasma theme
 
 X-KDE-PluginInfo-Author=Fedora KDE-SIG
 X-KDE-PluginInfo-Email=kde@lists.fedoraproject.org
 X-KDE-PluginInfo-Name=Korora
-X-KDE-PluginInfo-Version=21.90.0
+X-KDE-PluginInfo-Version=23.0
 X-KDE-PluginInfo-Website=http://fedoraproject.org/SIGs/KDE
 X-KDE-PluginInfo-Category=
 X-KDE-PluginInfo-Depends=
@@ -16,7 +16,7 @@ X-KDE-PluginInfo-EnabledByDefault=true
 FallbackTheme=default
 
 [Wallpaper]
-defaultWallpaperTheme=Korora
+defaultWallpaperTheme=Korora_cairn-at-quoddy
 defaultFileSuffix=.png
 defaultWidth=1920
 defaultHeight=1200

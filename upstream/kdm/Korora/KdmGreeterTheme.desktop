@@ -1,6 +1,7 @@
 [KdmGreeterTheme]
 Greeter=korora.xml
-Name=Korora 22
+Name=Korora
 Author=Fedora KDE SIG
 Copyright=(C) 2015 Fedora KDE SIG
+# NEEDSWORK
 Screenshot=screenshot.png
